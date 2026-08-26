@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webinar Gratuito – Microbiología del Vino</title>
+    <title>Webinar Gratuito – Elaboración de Vinos Espumosos | Qualab Consulting</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -203,6 +203,15 @@
         ::-webkit-scrollbar-thumb:hover { background: #881337; }
 
         html { scroll-behavior: smooth; }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s infinite;
+        }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -218,9 +227,9 @@
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="#" class="flex items-center gap-3">
                 <div class="w-10 h-10 border border-champagne-500/40 rounded-full flex items-center justify-center">
-                    <iconify-icon icon="ph:flask-bold" width="20" class="text-champagne-500"></iconify-icon>
+                    <iconify-icon icon="ph:wine-bold" width="20" class="text-champagne-500"></iconify-icon>
                 </div>
-                <span class="font-serif text-xl text-white tracking-wider hidden sm:block">Microbiología del Vino</span>
+                <span class="font-serif text-xl text-white tracking-wider hidden sm:block">Qualab Consulting</span>
             </a>
             <div class="hidden md:flex items-center gap-10 text-sm text-neutral-400">
                 <a href="#temario" class="hover:text-champagne-500 transition-colors">Temario</a>
@@ -245,12 +254,12 @@
                 </div>
 
                 <h1 class="anim-fadeup delay-100 text-5xl md:text-7xl lg:text-8xl leading-[0.9] mb-6 tracking-tight">
-                    <span class="block text-white font-light">El Mundo Invisible</span>
-                    <span class="block font-bold text-gradient-gold italic">del Vino</span>
+                    <span class="block text-white font-light">De la Fermentación</span>
+                    <span class="block font-bold text-gradient-gold italic">al Degüelle</span>
                 </h1>
 
                 <p class="anim-fadeup delay-200 text-lg text-neutral-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                    Profundiza en la <span class="text-white font-medium">microbiología enológica</span>. Descubre cómo levaduras y bacterias lácticas transforman el mosto y definen el carácter, aroma y calidad de tus vinos.
+                    Descubre <span class="text-white font-medium">cómo se elaboran los vinos espumosos</span>. Aprende paso a paso el método tradicional, desde la toma de espuma hasta el degüelle, y domina las técnicas que crean las burbujas perfectas.
                 </p>
 
                 <!-- Date & Time -->
@@ -259,7 +268,7 @@
                         <iconify-icon icon="solar:calendar-bold-duotone" width="24" class="text-champagne-500"></iconify-icon>
                         <div class="text-left">
                             <p class="text-xs text-neutral-500 uppercase">Fecha</p>
-                            <p class="text-sm font-medium">Lunes 17 de Agosto, 2026</p>
+                            <p class="text-sm font-medium">1 de Septiembre, 2026</p>
                         </div>
                     </div>
                     <div class="hidden sm:block w-px h-10 bg-neutral-800"></div>
@@ -276,7 +285,7 @@
                 <div class="anim-fadeup delay-500 flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
                     <a href="https://chat.whatsapp.com/HpsqkVXhznf6MoVC7KA0g9" target="_blank" class="btn-gold w-full sm:w-auto px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-3">
                         <iconify-icon icon="mdi:whatsapp" width="20"></iconify-icon>
-                        Reservar mi Lugar
+                        Regístrate y Conéctate
                     </a>
                     <p class="text-xs text-neutral-500">100% Gratuito • Cupos Limitados</p>
                 </div>
@@ -288,8 +297,8 @@
                 <div class="absolute bottom-20 right-10 w-20 h-20 molecule" style="animation-delay: 2s;"></div>
                 
                 <div class="hero-image-frame rounded-sm overflow-hidden">
-                    <img src="https://z-cdn-media.chatglm.cn/files/b940b47d-0678-4160-a9fd-cfe8ae550ad2.png?auth_key=1886372815-ac0f5f80ac8948399e6365f05fe10225-0-3dbb118e2b22aa7664b0d47932511811" 
-                         alt="Webinar Microbiología del Vino" 
+                    <img src="https://z-cdn-media.chatglm.cn/files/c0adc85c-4c08-4187-a3af-f184c6cddbc8.png?auth_key=1887773231-45a9163ba6be442c97e798e93e7d2dc8-0-128e2fc3032ea4b74d74d21dd80837eb" 
+                         alt="Webinar Cómo se elaboran los vinos espumosos" 
                          class="w-full h-auto object-cover rounded-sm">
                 </div>
             </div>
@@ -335,50 +344,82 @@
                 <!-- Card 1 -->
                 <div class="glass-card p-8 rounded-sm">
                     <div class="w-12 h-12 flex items-center justify-center mb-6 border border-champagne-500/20 rounded-full text-champagne-500">
-                        <iconify-icon icon="ph:microscope-bold" width="24"></iconify-icon>
+                        <iconify-icon icon="ph:wine-bold" width="24"></iconify-icon>
                     </div>
-                    <h3 class="text-2xl font-serif mb-3 text-white">Fundamentos Microbiológicos</h3>
-                    <p class="text-neutral-400 text-sm leading-relaxed">Explora el ecosistema del vino. Conoce los principales microorganismos presentes en la uva, el mosto y el vino terminado.</p>
+                    <h3 class="text-2xl font-serif mb-3 text-white">Introducción a los vinos espumosos</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Descubre el origen, la evolución y las características únicas que definen a los grandes espumosos a nivel mundial.</p>
                 </div>
                 <!-- Card 2 -->
                 <div class="glass-card p-8 rounded-sm">
                     <div class="w-12 h-12 flex items-center justify-center mb-6 border border-champagne-500/20 rounded-full text-champagne-500">
-                        <iconify-icon icon="ph:test-tube-bold" width="24"></iconify-icon>
+                        <iconify-icon icon="ph:atom-bold" width="24"></iconify-icon>
                     </div>
-                    <h3 class="text-2xl font-serif mb-3 text-white">Levaduras y Fermentación</h3>
-                    <p class="text-neutral-400 text-sm leading-relaxed">Análisis de Saccharomyces cerevisiae y levaduras no-Saccharomyces. Su rol crucial en la transformación de azúcares y perfil aromático.</p>
+                    <h3 class="text-2xl font-serif mb-3 text-white">La ciencia de las burbujas</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Entiende la física y química detrás del dióxido de carbono, la presión y la formación de la corona de burbujas.</p>
                 </div>
                 <!-- Card 3 -->
                 <div class="glass-card p-8 rounded-sm">
                     <div class="w-12 h-12 flex items-center justify-center mb-6 border border-champagne-500/20 rounded-full text-champagne-500">
-                        <iconify-icon icon="ph:bacteria-bold" width="24"></iconify-icon>
+                        <iconify-icon icon="ph:arrows-clockwise-bold" width="24"></iconify-icon>
                     </div>
-                    <h3 class="text-2xl font-serif mb-3 text-white">Bacterias Lácticas</h3>
-                    <p class="text-neutral-400 text-sm leading-relaxed">La fermentación maloláctica explicada. Cómo y por qué las bacterias lácticas suavizan la acidez y aportan complejidad al vino.</p>
+                    <h3 class="text-2xl font-serif mb-3 text-white">Métodos de elaboración</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Repaso de los distintos métodos: tradicional (champenoise), charmat, transferencia y gasificación.</p>
                 </div>
                 <!-- Card 4 -->
                 <div class="glass-card p-8 rounded-sm">
                     <div class="w-12 h-12 flex items-center justify-center mb-6 border border-champagne-500/20 rounded-full text-champagne-500">
-                        <iconify-icon icon="ph:warning-bold" width="24"></iconify-icon>
+                        <iconify-icon icon="ph:grape-bold" width="24"></iconify-icon>
                     </div>
-                    <h3 class="text-2xl font-serif mb-3 text-white">Microorganismos de Alteración</h3>
-                    <p class="text-neutral-400 text-sm leading-relaxed">Identifica y previene defectos. El temido Brettanomyces, bacterias acéticas y cómo evitar que arruinen tus producciones.</p>
+                    <h3 class="text-2xl font-serif mb-3 text-white">Elaboración del vino base</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">La importancia de la uva, el prensado y la primera fermentación para obtener una base ácida y neutra.</p>
                 </div>
                 <!-- Card 5 -->
                 <div class="glass-card p-8 rounded-sm">
                     <div class="w-12 h-12 flex items-center justify-center mb-6 border border-champagne-500/20 rounded-full text-champagne-500">
-                        <iconify-icon icon="ph:wine-bold" width="24"></iconify-icon>
+                        <iconify-icon icon="ph:test-tube-bold" width="24"></iconify-icon>
                     </div>
-                    <h3 class="text-2xl font-serif mb-3 text-white">Impacto Sensorial</h3>
-                    <p class="text-neutral-400 text-sm leading-relaxed">Conecta la microbiología con la cata. Cómo estos microorganismos crean los aromas, sabores y texturas que amamos.</p>
+                    <h3 class="text-2xl font-serif mb-3 text-white">Segunda fermentación</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">La toma de espuma: el milagro de la fermentación en botella que genera las preciadas burbujas y la presión.</p>
                 </div>
                 <!-- Card 6 -->
                 <div class="glass-card p-8 rounded-sm">
                     <div class="w-12 h-12 flex items-center justify-center mb-6 border border-champagne-500/20 rounded-full text-champagne-500">
+                        <iconify-icon icon="ph:clock-countdown-bold" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-3 text-white">Crianza sobre lías</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">El reposo prolongado que aporta complejidad aromática, estructura y esa textura sedosa en boca.</p>
+                </div>
+                <!-- Card 7 -->
+                <div class="glass-card p-8 rounded-sm">
+                    <div class="w-12 h-12 flex items-center justify-center mb-6 border border-champagne-500/20 rounded-full text-champagne-500">
+                        <iconify-icon icon="ph:snowflake-bold" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-3 text-white">Degüelle y licor de expedición</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">La expulsión de sedimentos y el ajuste final de dulzor que define el estilo del vino espumoso.</p>
+                </div>
+                <!-- Card 8 -->
+                <div class="glass-card p-8 rounded-sm">
+                    <div class="w-12 h-12 flex items-center justify-center mb-6 border border-champagne-500/20 rounded-full text-champagne-500">
                         <iconify-icon icon="ph:shield-check-bold" width="24"></iconify-icon>
                     </div>
-                    <h3 class="text-2xl font-serif mb-3 text-white">Control y Calidad</h3>
-                    <p class="text-neutral-400 text-sm leading-relaxed">Estrategias prácticas de higiene y control en bodega para asegurar fermentaciones seguras y vinos de máxima calidad.</p>
+                    <h3 class="text-2xl font-serif mb-3 text-white">Control de calidad</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Parámetros analíticos y prácticas enológicas clave para asegurar la estabilidad y máxima calidad.</p>
+                </div>
+                <!-- Card 9 -->
+                <div class="glass-card p-8 rounded-sm">
+                    <div class="w-12 h-12 flex items-center justify-center mb-6 border border-champagne-500/20 rounded-full text-champagne-500">
+                        <iconify-icon icon="ph:warning-bold" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-3 text-white">Principales defectos</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Identificación de alteraciones, aromas indeseados y estrategias para prevenirlos durante el proceso.</p>
+                </div>
+                <!-- Card 10 -->
+                <div class="glass-card p-8 rounded-sm">
+                    <div class="w-12 h-12 flex items-center justify-center mb-6 border border-champagne-500/20 rounded-full text-champagne-500">
+                        <iconify-icon icon="ph:calculator-bold" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-3 text-white">Formulación de un vino espumoso</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Cálculos prácticos y paso a paso para diseñar tu propio espumoso, ajustando azúcares y parámetros finales.</p>
                 </div>
             </div>
         </div>
@@ -403,7 +444,7 @@
                 <div class="divider-gold w-32 mb-8"></div>
 
                 <p class="text-neutral-400 text-lg leading-relaxed mb-8 max-w-xl">
-                    Con una sólida formación en biología y vasta experiencia en la industria vitivinícola, José desmitifica el mundo invisible del vino. Su enfoque combina la rigurosidad del laboratorio con la pasión por transmitir conocimiento accesible a todos los niveles.
+                    Con una sólida formación en enología y vasta experiencia en la industria vitivinícola, José desmitifica el complejo proceso de elaboración de vinos espumosos. Su enfoque combina la rigurosidad técnica del método tradicional con una pasión por enseñar de manera clara y accesible.
                 </p>
 
                 <div class="grid grid-cols-3 gap-6 mb-8 max-w-lg">
@@ -438,7 +479,7 @@
             </div>
             
             <h2 class="text-4xl md:text-6xl font-serif font-light text-white mb-6">
-                ¿Listo para descubrir la <span class="italic font-bold text-gradient-gold">ciencia</span> detrás del vino?
+                ¿Listo para descubrir los <span class="italic font-bold text-gradient-gold">secretos</span> de las burbujas?
             </h2>
             <p class="text-neutral-400 text-lg mb-10 max-w-2xl mx-auto">
                 Únete a nuestra comunidad de apasionados. Recibe el enlace de Zoom, material complementario y resuelve tus dudas en vivo.
@@ -461,7 +502,7 @@
 
             <a href="https://chat.whatsapp.com/HpsqkVXhznf6MoVC7KA0g9" target="_blank" class="btn-gold px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest inline-flex items-center gap-3 pulse-glow">
                 <iconify-icon icon="mdi:whatsapp" width="24"></iconify-icon>
-                ¡Regístrate Gratis Hoy!
+                ¡Regístrate y Conéctate!
             </a>
         </div>
     </section>
@@ -488,11 +529,11 @@
                 <!-- FAQ 2 -->
                 <div class="faq-item glass-card rounded-sm overflow-hidden">
                     <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left">
-                        <span class="text-lg font-serif text-white">¿Necesito conocimientos previos de microbiología?</span>
+                        <span class="text-lg font-serif text-white">¿Aprenderé sobre el Método Tradicional (Champenoise)?</span>
                         <iconify-icon icon="ph:plus-bold" width="24" class="faq-icon text-neutral-400 flex-shrink-0 ml-4"></iconify-icon>
                     </button>
                     <div class="faq-answer px-6 text-neutral-400 text-sm leading-relaxed">
-                        Para nada. José Guerrero explica los conceptos de forma clara y estructurada, ideal desde entusiastas del vino hasta enólogos buscando actualizarse.
+                        Exacto. Abordaremos el método tradicional paso a paso, explicando desde la fermentación en botella hasta el degüelle, ideal para entender cómo se elaboran los espumosos de calidad.
                     </div>
                 </div>
                 <!-- FAQ 3 -->
@@ -502,7 +543,7 @@
                         <iconify-icon icon="ph:plus-bold" width="24" class="faq-icon text-neutral-400 flex-shrink-0 ml-4"></iconify-icon>
                     </button>
                     <div class="faq-answer px-6 text-neutral-400 text-sm leading-relaxed">
-                        Te recomendamos ampliamente asistir en vivo para participar en la sesión de preguntas. Sin embargo, los miembros del grupo de WhatsApp tendrán acceso a la grabación por tiempo limitado.
+                        No te preocupes. Entendemos que los horarios pueden ser complicados, por lo que la sesión será grabada y compartida dentro del mismo grupo de WhatsApp para que puedas verla en diferido.
                     </div>
                 </div>
             </div>
@@ -514,12 +555,12 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <div class="w-8 h-8 border border-champagne-500/40 rounded-full flex items-center justify-center">
-                    <iconify-icon icon="ph:flask-bold" width="16" class="text-champagne-500"></iconify-icon>
+                    <iconify-icon icon="ph:wine-bold" width="16" class="text-champagne-500"></iconify-icon>
                 </div>
-                <span class="text-sm text-neutral-500">Microbiología del Vino © 2026</span>
+                <span class="text-sm text-neutral-500">Qualab Consulting © 2026</span>
             </div>
             <div class="text-xs text-neutral-600">
-                Ciencia • Fermentación • Calidad Enológica
+                Fermentación • Removido • Degüelle
             </div>
         </div>
     </footer>
@@ -532,7 +573,7 @@
     <script>
         // Countdown Logic
         function updateCountdown() {
-            const target = new Date('2026-08-17T19:30:00-06:00');
+            const target = new Date('2026-09-01T19:30:00-06:00');
             const now = new Date();
             const diff = target - now;
 
