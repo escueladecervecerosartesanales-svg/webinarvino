@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webinar Gratuito – La Química del Vino | Qualab Consulting</title>
+    <title>Webinar Gratuito – Ciencia del Vino | Qualab Consulting</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -23,24 +23,30 @@
                             500: '#e11d48',
                             600: '#be123c',
                             700: '#9f1239',
-                            800: '#881337',
-                            900: '#4c0519',
-                            950: '#2a0414',
+                            800: '#6b1f3f',
+                            900: '#4a0e2e',
+                            950: '#2e081c',
                         },
                         champagne: {
                             50: '#fdfbf3',
                             100: '#faf6e3',
                             200: '#f4eac2',
                             300: '#ecd996',
-                            400: '#e3c268',
+                            400: '#e8c66a',
                             500: '#d4af37', // Gold
                             600: '#bf9a2c',
                             700: '#9a7826',
                             800: '#7e6125',
                             900: '#6a5122',
                         },
-                        noir: '#0a0a0b',
-                        dark: '#121214'
+                        cream: {
+                            50: '#fdfaf4',
+                            100: '#f9f1e0',
+                            200: '#f2e3c5',
+                            300: '#e8d2a6',
+                        },
+                        noir: '#1c0512',
+                        dark: '#2e081c'
                     },
                     fontFamily: {
                         'serif': ['"Cormorant Garamond"', 'serif'],
@@ -53,7 +59,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a0b;
+            background-color: #1c0512;
             color: #fafafa;
             overflow-x: hidden;
         }
@@ -63,15 +69,15 @@
             position: fixed;
             inset: 0;
             z-index: 0;
-            opacity: 0.03;
+            opacity: 0.04;
             pointer-events: none;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        .glow-burgundy {
+        .glow-wine {
             position: absolute;
             border-radius: 50%;
-            filter: blur(120px);
+            filter: blur(130px);
             z-index: 0;
             pointer-events: none;
         }
@@ -90,22 +96,28 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        .text-gradient-cream {
+            background: linear-gradient(to right, #fdfaf4, #f2e3c5, #ecd996);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
         /* Buttons & Elements */
         .btn-gold {
-            background: linear-gradient(135deg, #e3c268 0%, #d4af37 50%, #bf9a2c 100%);
-            color: #0a0a0b;
+            background: linear-gradient(135deg, #e8c66a 0%, #d4af37 50%, #bf9a2c 100%);
+            color: #2e081c;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
         }
         .btn-gold:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.45);
         }
 
         .btn-wine {
-            background: linear-gradient(135deg, #881337 0%, #4c0519 100%);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, #6b1f3f 0%, #4a0e2e 100%);
+            border: 1px solid rgba(212, 175, 55, 0.35);
             color: #fff;
             transition: all 0.3s ease;
         }
@@ -115,20 +127,34 @@
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.12);
             backdrop-filter: blur(10px);
             transition: all 0.4s ease;
         }
         .glass-card:hover {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(212, 175, 55, 0.3);
+            background: rgba(212, 175, 55, 0.05);
+            border-color: rgba(212, 175, 55, 0.4);
             transform: translateY(-5px);
         }
 
         .divider-gold {
             height: 1px;
             background: linear-gradient(to right, transparent, #d4af37, transparent);
+        }
+
+        /* Badge estilo flyer */
+        .badge-gratuito {
+            background: linear-gradient(135deg, #e8c66a 0%, #d4af37 100%);
+            color: #2e081c;
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.35);
+        }
+
+        /* Sello circular estilo flyer */
+        .sello-circular {
+            background: radial-gradient(circle at 30% 30%, #6b1f3f, #4a0e2e 70%);
+            border: 3px solid rgba(232, 198, 106, 0.5);
+            box-shadow: 0 0 0 6px rgba(74, 14, 46, 0.6), 0 20px 50px rgba(0,0,0,0.5);
         }
 
         /* Animations */
@@ -153,29 +179,34 @@
             position: absolute;
             border-radius: 50%;
             background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.25);
             animation: floatMolecule 6s ease-in-out infinite;
+        }
+
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         /* Image Styling */
         .hero-image-frame {
             position: relative;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.25);
             padding: 8px;
-            background: linear-gradient(135deg, rgba(212,175,55,0.1), transparent);
+            background: linear-gradient(135deg, rgba(107,31,63,0.5), rgba(212,175,55,0.08));
         }
         .hero-image-frame::before {
             content: '';
             position: absolute;
             top: -20px; left: -20px; right: -20px; bottom: -20px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.06);
             z-index: -1;
         }
 
         /* Countdown */
         .countdown-block {
-            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
-            border: 1px solid rgba(212, 175, 55, 0.15);
+            background: linear-gradient(180deg, rgba(232,198,106,0.06) 0%, rgba(255,255,255,0) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         /* Accordion */
@@ -185,7 +216,7 @@
             transition: max-height 0.4s ease, padding 0.4s ease;
         }
         .faq-item.active .faq-answer {
-            max-height: 200px;
+            max-height: 240px;
             padding-bottom: 1.5rem;
         }
         .faq-item.active .faq-icon {
@@ -198,12 +229,12 @@
 
         /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0b; }
-        ::-webkit-scrollbar-thumb { background: #4c0519; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #881337; }
+        ::-webkit-scrollbar-track { background: #1c0512; }
+        ::-webkit-scrollbar-thumb { background: #6b1f3f; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9f1239; }
 
         html { scroll-behavior: smooth; }
-        
+
         .pulse-glow {
             animation: pulseGlow 2s infinite;
         }
@@ -212,15 +243,22 @@
             70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
             100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
+
+        /* Franja crema estilo flyer */
+        .strip-cream {
+            background: linear-gradient(135deg, #f9f1e0 0%, #f2e3c5 100%);
+            color: #4a0e2e;
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <div class="bg-noise"></div>
-    
+
     <!-- Ambient Glows -->
-    <div class="glow-burgundy w-[600px] h-[600px] top-[-100px] left-[-100px] opacity-30"></div>
-    <div class="glow-burgundy w-[500px] h-[500px] bottom-[-100px] right-[-100px] opacity-20"></div>
+    <div class="glow-wine w-[700px] h-[700px] top-[-150px] left-[-150px] bg-burgundy-800 opacity-50"></div>
+    <div class="glow-wine w-[500px] h-[500px] bottom-[-100px] right-[-100px] bg-burgundy-700 opacity-30"></div>
+    <div class="glow-wine w-[400px] h-[400px] top-[40%] right-[20%] bg-champagne-700 opacity-10"></div>
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300" id="navbar">
@@ -231,75 +269,112 @@
                 </div>
                 <span class="font-serif text-xl text-white tracking-wider hidden sm:block">Qualab Consulting</span>
             </a>
-            <div class="hidden md:flex items-center gap-10 text-sm text-neutral-400">
-                <a href="#temario" class="hover:text-champagne-500 transition-colors">Temario</a>
-                <a href="#ponente" class="hover:text-champagne-500 transition-colors">Ponente</a>
-                <a href="#faq" class="hover:text-champagne-500 transition-colors">FAQ</a>
+            <div class="hidden md:flex items-center gap-10 text-sm text-neutral-300">
+                <a href="#temario" class="hover:text-champagne-400 transition-colors">Temario</a>
+                <a href="#ponente" class="hover:text-champagne-400 transition-colors">Ponente</a>
+                <a href="#faq" class="hover:text-champagne-400 transition-colors">FAQ</a>
             </div>
-            <a href="https://chat.whatsapp.com/HpsqkVXhznf6MoVC7KA0g9" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest">
-                Regístrate Gratis
+            <a href="https://chat.whatsapp.com/HpsqkVXhznf6MoVC7KA0g9" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest">
+                Inscríbete Gratis
             </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative z-10 pt-40 pb-20 px-6">
+    <header class="relative z-10 pt-36 pb-20 px-6">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-            
+
             <!-- Left Content -->
             <div class="text-center lg:text-left">
-                <div class="anim-fadeup inline-flex items-center gap-3 px-4 py-2 rounded-full border border-champagne-500/20 bg-burgundy-950/30 mb-8">
-                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                    <span class="text-xs uppercase tracking-[0.2em] text-neutral-300">Webinar Gratuito en Vivo</span>
+                <!-- Badge WEBINAR GRATUITO -->
+                <div class="anim-fadeup inline-flex flex-col items-center gap-1 mb-8">
+                    <span class="text-xs md:text-sm uppercase tracking-[0.4em] text-cream-200 font-bold">Webinar</span>
+                    <span class="badge-gratuito px-6 py-1.5 rounded-full text-xl md:text-2xl font-black uppercase tracking-widest">
+                        Gratuito
+                    </span>
                 </div>
 
-                <h1 class="anim-fadeup delay-100 text-5xl md:text-6xl lg:text-7xl leading-[0.9] mb-6 tracking-tight">
-                    <span class="block text-white font-light">La Química del Vino:</span>
-                    <span class="block font-bold text-gradient-gold italic">Calidad en tu Copa</span>
+                <h1 class="anim-fadeup delay-100 text-6xl md:text-7xl lg:text-8xl leading-[0.85] mb-6 tracking-tight">
+                    <span class="block text-white font-black uppercase">Ciencia</span>
+                    <span class="block">
+                        <span class="font-serif italic font-semibold text-gradient-gold text-4xl md:text-5xl lg:text-6xl align-middle mr-3">del</span>
+                        <span class="text-white font-black uppercase">Vino</span>
+                    </span>
                 </h1>
 
-                <p class="anim-fadeup delay-200 text-lg text-neutral-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                    Descubre <span class="text-white font-medium">cómo la química transforma la uva</span> en una experiencia sensorial única. Aprende sobre los compuestos clave, el aroma, la estabilidad y su aplicación práctica de laboratorio a la copa.
+                <!-- Divider con uvas -->
+                <div class="anim-fadeup delay-100 flex items-center justify-center lg:justify-start gap-4 mb-6">
+                    <div class="divider-gold w-20 lg:w-32"></div>
+                    <iconify-icon icon="mdi:fruit-grapes" width="28" class="text-champagne-500"></iconify-icon>
+                    <div class="divider-gold w-20 lg:w-32"></div>
+                </div>
+
+                <p class="anim-fadeup delay-200 text-xl md:text-2xl text-cream-100 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-light">
+                    Descubre la ciencia que transforma cada uva
+                    en una <span class="text-gold font-semibold">gran experiencia</span>.
                 </p>
 
                 <!-- Date & Time -->
-                <div class="anim-fadeup delay-300 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
-                    <div class="flex items-center gap-3 text-neutral-300">
-                        <iconify-icon icon="solar:calendar-bold-duotone" width="24" class="text-champagne-500"></iconify-icon>
+                <div class="anim-fadeup delay-300 flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-10">
+                    <div class="flex items-center gap-3 text-cream-100">
+                        <div class="w-12 h-12 rounded-full bg-burgundy-800 border border-champagne-500/30 flex items-center justify-center flex-shrink-0">
+                            <iconify-icon icon="solar:calendar-bold-duotone" width="24" class="text-champagne-400"></iconify-icon>
+                        </div>
                         <div class="text-left">
-                            <p class="text-xs text-neutral-500 uppercase">Fecha</p>
-                            <p class="text-sm font-medium">18 de Septiembre, 2026</p>
+                            <p class="text-sm font-black uppercase leading-tight">Viernes <span class="text-gold">16 de Octubre</span></p>
+                            <p class="text-xs text-neutral-400 uppercase tracking-wider">de 2026</p>
                         </div>
                     </div>
-                    <div class="hidden sm:block w-px h-10 bg-neutral-800"></div>
-                    <div class="flex items-center gap-3 text-neutral-300">
-                        <iconify-icon icon="solar:clock-circle-bold-duotone" width="24" class="text-champagne-500"></iconify-icon>
+                    <div class="hidden sm:block w-px h-12 bg-champagne-500/20"></div>
+                    <div class="flex items-center gap-3 text-cream-100">
+                        <div class="w-12 h-12 rounded-full bg-burgundy-800 border border-champagne-500/30 flex items-center justify-center flex-shrink-0">
+                            <iconify-icon icon="solar:clock-circle-bold-duotone" width="24" class="text-champagne-400"></iconify-icon>
+                        </div>
                         <div class="text-left">
-                            <p class="text-xs text-neutral-500 uppercase">Hora</p>
-                            <p class="text-sm font-medium">7:30 PM (CDMX) por Zoom</p>
+                            <p class="text-sm font-black uppercase leading-tight"><span class="text-gold">7:30 PM</span></p>
+                            <p class="text-xs text-neutral-400 uppercase tracking-wider">(Hora CDMX)</p>
+                        </div>
+                    </div>
+                    <div class="hidden sm:block w-px h-12 bg-champagne-500/20"></div>
+                    <div class="flex items-center gap-3 text-cream-100">
+                        <div class="w-12 h-12 rounded-full bg-burgundy-800 border border-champagne-500/30 flex items-center justify-center flex-shrink-0">
+                            <iconify-icon icon="solar:videocamera-record-bold-duotone" width="24" class="text-champagne-400"></iconify-icon>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-xs text-neutral-400 uppercase tracking-wider">Por</p>
+                            <p class="text-sm font-black uppercase leading-tight">Zoom</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- CTA -->
                 <div class="anim-fadeup delay-500 flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
-                    <a href="https://chat.whatsapp.com/HpsqkVXhznf6MoVC7KA0g9" target="_blank" class="btn-gold w-full sm:w-auto px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-3">
+                    <a href="https://chat.whatsapp.com/HpsqkVXhznf6MoVC7KA0g9" target="_blank" class="btn-gold w-full sm:w-auto px-8 py-4 rounded-full text-sm font-black uppercase tracking-widest flex items-center justify-center gap-3">
                         <iconify-icon icon="mdi:whatsapp" width="20"></iconify-icon>
                         ¡Regístrate Gratis!
                     </a>
-                    <p class="text-xs text-neutral-500">100% Gratuito • Cupos Limitados</p>
+                    <p class="text-xs text-neutral-400 uppercase tracking-widest">— Cupo Limitado —</p>
                 </div>
             </div>
 
-            <!-- Right Image -->
+            <!-- Right Image + Sello Circular -->
             <div class="relative anim-fadeup delay-300 hidden md:block">
                 <div class="absolute top-10 left-10 w-32 h-32 molecule"></div>
-                <div class="absolute bottom-20 right-10 w-20 h-20 molecule" style="animation-delay: 2s;"></div>
-                
+                <div class="absolute bottom-32 right-10 w-20 h-20 molecule" style="animation-delay: 2s;"></div>
+
                 <div class="hero-image-frame rounded-sm overflow-hidden">
-                    <img src="https://z-cdn-media.chatglm.cn/files/ea70fde1-a334-48d9-891c-10840f2281f2.png?auth_key=1889407215-93c08ad369824e4ba3754b13360889a6-0-23916f96b0e722d50dbe2c37316d16ba" 
-                         alt="Webinar La Química del Vino: Laboratorio y Cata" 
+                    <img src="https://z-cdn-media.chatglm.cn/files/ea70fde1-a334-48d9-891c-10840f2281f2.png?auth_key=1889407215-93c08ad369824e4ba3754b13360889a6-0-23916f96b0e722d50dbe2c37316d16ba"
+                         alt="Webinar Ciencia del Vino: Laboratorio y Cata"
                          class="w-full h-auto object-cover rounded-sm">
+                </div>
+
+                <!-- Sello circular estilo flyer -->
+                <div class="absolute -bottom-10 -left-6 lg:-left-12 w-48 h-48 lg:w-56 lg:h-56 rounded-full sello-circular flex flex-col items-center justify-center text-center p-6">
+                    <iconify-icon icon="mdi:fruit-grapes" width="30" class="text-champagne-400 mb-2"></iconify-icon>
+                    <p class="text-white font-black uppercase text-sm tracking-wide leading-tight">Aprende</p>
+                    <p class="text-champagne-400 font-bold uppercase text-[11px] tracking-wider leading-snug mt-1">Desde la ciencia</p>
+                    <p class="text-cream-100 text-[11px] uppercase tracking-wide leading-snug mt-1">para entender,<br>elaborar y disfrutar</p>
+                    <p class="text-champagne-400 font-bold uppercase text-[11px] tracking-wider leading-snug mt-1">grandes vinos</p>
                 </div>
             </div>
 
@@ -307,25 +382,25 @@
     </header>
 
     <!-- Countdown Section -->
-    <section class="relative z-10 py-16 px-6 border-y border-neutral-900">
+    <section class="relative z-10 py-16 px-6 border-y border-champagne-500/10">
         <div class="max-w-4xl mx-auto text-center">
-            <p class="text-sm uppercase tracking-[0.3em] text-neutral-500 mb-8 font-serif italic">El análisis comienza en</p>
+            <p class="text-sm uppercase tracking-[0.3em] text-neutral-400 mb-8 font-serif italic">El análisis comienza en</p>
             <div class="grid grid-cols-4 gap-4 md:gap-8" id="countdown">
                 <div class="countdown-block p-4 md:p-6 rounded-sm">
                     <div id="days" class="text-4xl md:text-6xl font-serif font-bold text-gold">00</div>
-                    <div class="text-[10px] md:text-xs uppercase tracking-widest text-neutral-500 mt-2">Días</div>
+                    <div class="text-[10px] md:text-xs uppercase tracking-widest text-neutral-400 mt-2">Días</div>
                 </div>
                 <div class="countdown-block p-4 md:p-6 rounded-sm">
                     <div id="hours" class="text-4xl md:text-6xl font-serif font-bold text-gold">00</div>
-                    <div class="text-[10px] md:text-xs uppercase tracking-widest text-neutral-500 mt-2">Horas</div>
+                    <div class="text-[10px] md:text-xs uppercase tracking-widest text-neutral-400 mt-2">Horas</div>
                 </div>
                 <div class="countdown-block p-4 md:p-6 rounded-sm">
                     <div id="minutes" class="text-4xl md:text-6xl font-serif font-bold text-gold">00</div>
-                    <div class="text-[10px] md:text-xs uppercase tracking-widest text-neutral-500 mt-2">Minutos</div>
+                    <div class="text-[10px] md:text-xs uppercase tracking-widest text-neutral-400 mt-2">Minutos</div>
                 </div>
                 <div class="countdown-block p-4 md:p-6 rounded-sm">
                     <div id="seconds" class="text-4xl md:text-6xl font-serif font-bold text-gold">00</div>
-                    <div class="text-[10px] md:text-xs uppercase tracking-widest text-neutral-500 mt-2">Segundos</div>
+                    <div class="text-[10px] md:text-xs uppercase tracking-widest text-neutral-400 mt-2">Segundos</div>
                 </div>
             </div>
         </div>
@@ -336,49 +411,53 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <p class="text-gold text-sm uppercase tracking-[0.3em] mb-4 font-medium">El Programa</p>
-                <h2 class="text-4xl md:text-6xl font-serif font-light mb-4">Temario del Webinar</h2>
+                <h2 class="text-4xl md:text-6xl font-serif font-light mb-4">Entender. Elaborar. Disfrutar.</h2>
                 <div class="divider-gold w-24 mx-auto"></div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- Card 1 -->
                 <div class="glass-card p-8 rounded-sm flex flex-col md:flex-row gap-6 items-start">
-                    <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center border border-champagne-500/20 rounded-full text-champagne-500">
+                    <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center border border-champagne-500/30 rounded-full text-champagne-400">
                         <iconify-icon icon="ph:atom-bold" width="28"></iconify-icon>
                     </div>
                     <div>
+                        <p class="text-champagne-500 text-[10px] uppercase tracking-[0.25em] mb-1 font-bold">Entender</p>
                         <h3 class="text-2xl font-serif mb-3 text-white">Compuestos Clave</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">Analiza las moléculas fundamentales que estructuran el vino, desde polifenoles hasta alcocales, y cómo definen su carácter.</p>
+                        <p class="text-neutral-300 text-sm leading-relaxed">Analiza las moléculas fundamentales que estructuran el vino, desde polifenoles y taninos hasta antocianos, y cómo definen su carácter.</p>
                     </div>
                 </div>
                 <!-- Card 2 -->
                 <div class="glass-card p-8 rounded-sm flex flex-col md:flex-row gap-6 items-start">
-                    <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center border border-champagne-500/20 rounded-full text-champagne-500">
+                    <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center border border-champagne-500/30 rounded-full text-champagne-400">
                         <iconify-icon icon="ph:nose-bold" width="28"></iconify-icon>
                     </div>
                     <div>
+                        <p class="text-champagne-500 text-[10px] uppercase tracking-[0.25em] mb-1 font-bold">Disfrutar</p>
                         <h3 class="text-2xl font-serif mb-3 text-white">Aroma y Sabor</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">Explora cómo los ésteres, terpenos y ácidos interactúan para crear la paleta sensorial única que llega a tu copa.</p>
+                        <p class="text-neutral-300 text-sm leading-relaxed">Explora cómo los ésteres, terpenos y ácidos interactúan para crear la paleta sensorial única que llega a tu copa.</p>
                     </div>
                 </div>
                 <!-- Card 3 -->
                 <div class="glass-card p-8 rounded-sm flex flex-col md:flex-row gap-6 items-start">
-                    <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center border border-champagne-500/20 rounded-full text-champagne-500">
+                    <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center border border-champagne-500/30 rounded-full text-champagne-400">
                         <iconify-icon icon="ph:shield-check-bold" width="28"></iconify-icon>
                     </div>
                     <div>
+                        <p class="text-champagne-500 text-[10px] uppercase tracking-[0.25em] mb-1 font-bold">Elaborar</p>
                         <h3 class="text-2xl font-serif mb-3 text-white">Estabilidad</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">Aprende los procesos químicos y físicos para prevenir alteraciones, garantir la vida útil del vino y conservar su calidad.</p>
+                        <p class="text-neutral-300 text-sm leading-relaxed">Aprende los procesos químicos y físicos para prevenir alteraciones, garantizar la vida útil del vino y conservar su calidad.</p>
                     </div>
                 </div>
                 <!-- Card 4 -->
                 <div class="glass-card p-8 rounded-sm flex flex-col md:flex-row gap-6 items-start">
-                    <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center border border-champagne-500/20 rounded-full text-champagne-500">
+                    <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center border border-champagne-500/30 rounded-full text-champagne-400">
                         <iconify-icon icon="ph:beaker-bold" width="28"></iconify-icon>
                     </div>
                     <div>
+                        <p class="text-champagne-500 text-[10px] uppercase tracking-[0.25em] mb-1 font-bold">Elaborar</p>
                         <h3 class="text-2xl font-serif mb-3 text-white">Aplicación Práctica</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">Traduce la teoría química en decisiones enológicas reales: desde la vendimia hasta el embotellado en la bodega.</p>
+                        <p class="text-neutral-300 text-sm leading-relaxed">Traduce la teoría química en decisiones enológicas reales: desde la vendimia hasta el embotellado en la bodega.</p>
                     </div>
                 </div>
             </div>
@@ -386,12 +465,12 @@
     </section>
 
     <!-- Ponente Section -->
-    <section id="ponente" class="relative z-10 py-24 px-6 bg-dark">
+    <section id="ponente" class="relative z-10 py-24 px-6 bg-burgundy-950/60">
         <div class="max-w-6xl mx-auto grid md:grid-cols-5 gap-12 items-center">
             <div class="md:col-span-2 relative">
-                <div class="relative w-full max-w-sm mx-auto aspect-[4/5] overflow-hidden rounded-sm border border-champagne-500/10">
-                    <img src="https://z-cdn-media.chatglm.cn/files/bc2e69ef-c612-44c7-a53e-da290d73f629.jpeg?auth_key=1881192292-0129ef980e73400795af0c81fd74307b-0-ddb65fa549f306ed0f30f914ccfc8e9f" 
-                         alt="José Guerrero" 
+                <div class="relative w-full max-w-sm mx-auto aspect-[4/5] overflow-hidden rounded-sm border border-champagne-500/20">
+                    <img src="https://z-cdn-media.chatglm.cn/files/bc2e69ef-c612-44c7-a53e-da290d73f629.jpeg?auth_key=1881192292-0129ef980e73400795af0c81fd74307b-0-ddb65fa549f306ed0f30f914ccfc8e9f"
+                         alt="José Guerrero"
                          class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-noir to-transparent"></div>
                 </div>
@@ -400,29 +479,29 @@
                 <p class="text-gold text-sm uppercase tracking-[0.3em] mb-4 font-medium">El Experto</p>
                 <h2 class="text-5xl md:text-6xl font-serif font-light text-white mb-2">José</h2>
                 <h2 class="text-5xl md:text-6xl font-serif font-bold text-gradient-gold italic mb-6">Guerrero</h2>
-                
+
                 <div class="divider-gold w-32 mb-8"></div>
 
-                <p class="text-neutral-400 text-lg leading-relaxed mb-8 max-w-xl">
+                <p class="text-neutral-300 text-lg leading-relaxed mb-8 max-w-xl">
                     Especialista en química enológica, José desmitifica la ciencia detrás del vino. Su enfoque combina el rigor analítico del laboratorio con la pasión por la enología, enseñando cómo la ciencia eleva la calidad de la uva a la copa de manera clara y accesible.
                 </p>
 
                 <div class="grid grid-cols-3 gap-6 mb-8 max-w-lg">
                     <div>
                         <div class="text-3xl font-serif font-bold text-gold">7+</div>
-                        <p class="text-xs text-neutral-500 uppercase tracking-wider mt-1">Años de Experiencia</p>
+                        <p class="text-xs text-neutral-400 uppercase tracking-wider mt-1">Años de Experiencia</p>
                     </div>
                     <div>
                         <div class="text-3xl font-serif font-bold text-gold">1500+</div>
-                        <p class="text-xs text-neutral-500 uppercase tracking-wider mt-1">Alumnos Formados</p>
+                        <p class="text-xs text-neutral-400 uppercase tracking-wider mt-1">Alumnos Formados</p>
                     </div>
                     <div>
                         <div class="text-3xl font-serif font-bold text-gold">100%</div>
-                        <p class="text-xs text-neutral-500 uppercase tracking-wider mt-1">Enfoque Práctico</p>
+                        <p class="text-xs text-neutral-400 uppercase tracking-wider mt-1">Enfoque Práctico</p>
                     </div>
                 </div>
 
-                <a href="https://chat.whatsapp.com/HpsqkVXhznf6MoVC7KA0g9" target="_blank" class="btn-wine px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-widest inline-flex items-center gap-3">
+                <a href="https://chat.whatsapp.com/HpsqkVXhznf6MoVC7KA0g9" target="_blank" class="btn-wine px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest inline-flex items-center gap-3">
                     Aprender de José
                     <iconify-icon icon="solar:arrow-right-bold" width="18"></iconify-icon>
                 </a>
@@ -430,45 +509,64 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="relative z-10 py-24 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-champagne-500/20 bg-burgundy-950/30 mb-8">
-                <iconify-icon icon="mdi:whatsapp" width="16" class="text-green-400"></iconify-icon>
-                <span class="text-xs uppercase tracking-[0.2em] text-neutral-300">Acceso por WhatsApp</span>
-            </div>
-            
-            <h2 class="text-4xl md:text-6xl font-serif font-light text-white mb-6">
-                ¿Listo para analizar los <span class="italic font-bold text-gradient-gold">secretos</span> de tu copa?
-            </h2>
-            <p class="text-neutral-400 text-lg mb-10 max-w-2xl mx-auto">
-                Únete a nuestra comunidad de apasionados. Recibe el enlace de Zoom, material complementario y resuelve tus dudas químicas en vivo.
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-                <div class="flex items-center gap-2 text-neutral-300">
-                    <iconify-icon icon="ph:check-circle-bold" width="20" class="text-green-400"></iconify-icon>
-                    <span class="text-sm">100% Gratuito</span>
+    <!-- CTA Strip estilo flyer (franja crema) -->
+    <section class="relative z-10 py-16 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="strip-cream rounded-sm p-8 md:p-12 grid md:grid-cols-2 gap-8 items-center shadow-2xl shadow-burgundy-900/50">
+                <!-- Izquierda -->
+                <div class="flex items-center gap-5">
+                    <div class="w-16 h-16 flex-shrink-0 rounded-full bg-burgundy-900 flex items-center justify-center">
+                        <iconify-icon icon="ph:gift-bold" width="30" class="text-champagne-400"></iconify-icon>
+                    </div>
+                    <div>
+                        <p class="text-2xl md:text-3xl font-black uppercase text-burgundy-900 leading-tight">¡Regístrate Gratis!</p>
+                        <p class="text-sm uppercase tracking-[0.2em] text-burgundy-800/70 font-semibold mt-1">— Cupo Limitado —</p>
+                    </div>
                 </div>
-                <div class="flex items-center gap-2 text-neutral-300">
-                    <iconify-icon icon="ph:check-circle-bold" width="20" class="text-green-400"></iconify-icon>
-                    <span class="text-sm">Sesión en Vivo</span>
-                </div>
-                <div class="flex items-center gap-2 text-neutral-300">
-                    <iconify-icon icon="ph:check-circle-bold" width="20" class="text-green-400"></iconify-icon>
-                    <span class="text-sm">Cupos Limitados</span>
+                <div class="hidden md:block w-px h-20 bg-burgundy-900/20 md:justify-self-center"></div>
+                <!-- Derecha -->
+                <div class="text-center md:text-left">
+                    <a href="https://chat.whatsapp.com/HpsqkVXhznf6MoVC7KA0g9" target="_blank" class="group inline-flex items-center gap-3">
+                        <span class="text-2xl md:text-3xl font-black uppercase text-burgundy-800 group-hover:text-burgundy-600 transition-colors underline decoration-champagne-600 decoration-4 underline-offset-8">
+                            Inscríbete Ahora
+                        </span>
+                        <iconify-icon icon="solar:arrow-right-up-bold" width="30" class="text-burgundy-800 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></iconify-icon>
+                    </a>
+                    <p class="text-lg font-bold uppercase tracking-wide text-burgundy-900 mt-2">y asegura tu lugar</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <a href="https://chat.whatsapp.com/HpsqkVXhznf6MoVC7KA0g9" target="_blank" class="btn-gold px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest inline-flex items-center gap-3 pulse-glow">
-                <iconify-icon icon="mdi:whatsapp" width="24"></iconify-icon>
-                ¡Regístrate y Conéctate!
-            </a>
+    <!-- Info Final estilo flyer -->
+    <section class="relative z-10 pb-24 px-6">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center border border-champagne-500/15 bg-burgundy-900/30 backdrop-blur rounded-sm p-8 md:p-12">
+            <!-- Ciencia, pasión y conocimiento -->
+            <div class="flex items-center gap-5">
+                <div class="w-16 h-16 flex-shrink-0 rounded-full border-2 border-champagne-500/40 flex items-center justify-center">
+                    <iconify-icon icon="ph:flask-bold" width="30" class="text-champagne-400"></iconify-icon>
+                </div>
+                <div>
+                    <p class="text-white font-black uppercase text-lg leading-tight">Ciencia, Pasión<br>y Conocimiento</p>
+                    <p class="text-champagne-400 font-bold uppercase text-sm tracking-wide mt-1 border-b-2 border-champagne-600 inline-block pb-0.5">para mejores vinos</p>
+                </div>
+            </div>
+            <div class="hidden md:block w-px h-20 bg-champagne-500/20 md:justify-self-center"></div>
+            <!-- Por Zoom -->
+            <div class="flex items-center gap-5">
+                <div class="w-16 h-16 flex-shrink-0 rounded-full bg-[#2D8CFF] flex items-center justify-center shadow-lg shadow-blue-500/20">
+                    <iconify-icon icon="solar:videocamera-record-bold" width="30" class="text-white"></iconify-icon>
+                </div>
+                <div>
+                    <p class="text-white font-black uppercase text-lg leading-tight">Por Zoom</p>
+                    <p class="text-neutral-300 text-sm uppercase tracking-wide mt-1">Enlace será enviado<br>a los registrados</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="relative z-10 py-24 px-6 bg-dark">
+    <section id="faq" class="relative z-10 py-24 px-6 bg-burgundy-950/60 border-t border-champagne-500/10">
         <div class="max-w-3xl mx-auto">
             <div class="text-center mb-16">
                 <p class="text-gold text-sm uppercase tracking-[0.3em] mb-4 font-medium">Resolvemos tus dudas</p>
@@ -482,8 +580,8 @@
                         <span class="text-lg font-serif text-white">¿El webinar es realmente gratuito?</span>
                         <iconify-icon icon="ph:plus-bold" width="24" class="faq-icon text-neutral-400 flex-shrink-0 ml-4"></iconify-icon>
                     </button>
-                    <div class="faq-answer px-6 text-neutral-400 text-sm leading-relaxed">
-                        Sí, el acceso al webinar por Zoom es 100% gratuito. Solo necesitas unirte al grupo de WhatsApp para recibir tu enlace de invitación.
+                    <div class="faq-answer px-6 text-neutral-300 text-sm leading-relaxed">
+                        Sí, el acceso al webinar por Zoom es 100% gratuito. Solo necesitas unirte al grupo de WhatsApp y el enlace será enviado a los registrados.
                     </div>
                 </div>
                 <!-- FAQ 2 -->
@@ -492,8 +590,18 @@
                         <span class="text-lg font-serif text-white">¿Qué pasa si no puedo asistir en vivo?</span>
                         <iconify-icon icon="ph:plus-bold" width="24" class="faq-icon text-neutral-400 flex-shrink-0 ml-4"></iconify-icon>
                     </button>
-                    <div class="faq-answer px-6 text-neutral-400 text-sm leading-relaxed">
-                        Es muy importante que accedas en vivo. La sesión no se grabará ni se compartirá posteriormente, por lo que te recomendamos reservar el tiempo en tu agenda para no perderte esta única transmisión.
+                    <div class="faq-answer px-6 text-neutral-300 text-sm leading-relaxed">
+                        Es muy importante que accedas en vivo. La sesión no se grabará ni se compartirá posteriormente, por lo que te recomendamos reservar el viernes 16 de octubre en tu agenda para no perderte esta única transmisión.
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="faq-item glass-card rounded-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left">
+                        <span class="text-lg font-serif text-white">¿Necesito conocimientos previos de química?</span>
+                        <iconify-icon icon="ph:plus-bold" width="24" class="faq-icon text-neutral-400 flex-shrink-0 ml-4"></iconify-icon>
+                    </button>
+                    <div class="faq-answer px-6 text-neutral-300 text-sm leading-relaxed">
+                        No. El webinar está diseñado para explicar la ciencia desde cero, con un lenguaje claro y accesible, ideal tanto para aficionados como para profesionales del vino.
                     </div>
                 </div>
             </div>
@@ -501,16 +609,16 @@
     </section>
 
     <!-- Footer -->
-    <footer class="relative z-10 py-12 px-6 border-t border-neutral-900">
+    <footer class="relative z-10 py-12 px-6 border-t border-champagne-500/10">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <div class="w-8 h-8 border border-champagne-500/40 rounded-full flex items-center justify-center">
                     <iconify-icon icon="ph:flask-bold" width="16" class="text-champagne-500"></iconify-icon>
                 </div>
-                <span class="text-sm text-neutral-500">Qualab Consulting © 2026</span>
+                <span class="text-sm text-neutral-400">Qualab Consulting © 2026</span>
             </div>
-            <div class="text-xs text-neutral-600">
-                Compuestos • Aroma • Estabilidad
+            <div class="text-xs text-neutral-500 uppercase tracking-widest">
+                Ciencia, Pasión y Conocimiento para Mejores Vinos
             </div>
         </div>
     </footer>
@@ -521,9 +629,9 @@
     </a>
 
     <script>
-        // Countdown Logic - Actualizado al 18 de Septiembre de 2026
+        // Countdown Logic - Viernes 16 de Octubre de 2026, 7:30 PM CDMX
         function updateCountdown() {
-            const target = new Date('2026-09-18T19:30:00-06:00');
+            const target = new Date('2026-10-16T19:30:00-06:00');
             const now = new Date();
             const diff = target - now;
 
@@ -552,9 +660,9 @@
         function toggleFaq(button) {
             const item = button.parentElement;
             const isActive = item.classList.contains('active');
-            
+
             document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-            
+
             if (!isActive) {
                 item.classList.add('active');
             }
@@ -564,9 +672,9 @@
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('bg-noir/80', 'backdrop-blur-md', 'border-b', 'border-neutral-900');
+                navbar.classList.add('bg-noir/90', 'backdrop-blur-md', 'border-b', 'border-champagne-500/10');
             } else {
-                navbar.classList.remove('bg-noir/80', 'backdrop-blur-md', 'border-b', 'border-neutral-900');
+                navbar.classList.remove('bg-noir/90', 'backdrop-blur-md', 'border-b', 'border-champagne-500/10');
             }
         });
     </script>
